@@ -135,15 +135,6 @@ public class Deployment {
             completion(result.latestResult())
         }
     }
-
-    func alertToInstallNewBuild(build: PFObject) -> UIAlertController {
-        let title = "Install new build"
-        let applicationName = build.objectForKey("application_name") as String
-        let message = "There is a new build of \(applicationName)"
-        var alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
-        return alert
-    }
-
 }
 
 extension PFObject {
