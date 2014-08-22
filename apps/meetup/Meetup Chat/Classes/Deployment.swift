@@ -24,8 +24,7 @@ public class Deployment {
         configureNotificationsForApplication(application)
 
         if let options = launchOptions {
-            var payload = options[UIApplicationLaunchOptionsRemoteNotificationKey] as NSDictionary
-            if payload != nil {
+            if let payload = options[UIApplicationLaunchOptionsRemoteNotificationKey] as? NSDictionary {
                 receivedRemoteNotificationPayload(payload)
             }
         }
@@ -90,22 +89,7 @@ public class Deployment {
     }
 
     private func checkForNewVersions() {
-
-        func currentBundleVersion() -> Int {
-            var bundle_version: AnyObject? = NSBundle.mainBundle().infoDictionary["CFBundleVersion"]
-            if let version = bundle_version as? Int {
-                return version
-            }
-            return 1
-        }
-
-        func isOlderThanBuild(build: PFObject) -> Bool {
-            if let bundle_version: NSNumber = build.objectForKey("bundle_version") as? NSNumber {
-                return UInt8(bundle_version.integerValue) > UInt8(currentBundleVersion())
-            }
-            return 1
-        }
-
+        if currentBundleVersion() == 1 { return }
         fetchLatestBuild { [weak self] (result) -> () in
             if let weakSelf = self? {
                 switch result {
@@ -113,7 +97,7 @@ public class Deployment {
                     debug("Error fetching lasted build")
                 case .Result(let build):
                     if let build = build {
-                        if isOlderThanBuild(build) {
+                        if weakSelf.isOlderThanBuild(build) {
                             weakSelf.installFromBuild(build)
                         }
                     }
@@ -121,6 +105,25 @@ public class Deployment {
             }
         }
     }
+
+    private func currentBundleVersion() -> Int {
+        var bundle_version: AnyObject? = NSBundle.mainBundle().infoDictionary["CFBundleVersion"]
+        if let version = bundle_version as? Int {
+            return version
+        }
+        return 1
+    }
+
+    private func isOlderThanBuild(build: PFObject) -> Bool {
+        var current = UInt8(currentBundleVersion())
+        if current > 1 {
+            if let bundle_version: NSNumber = build.objectForKey("bundle_version") as? NSNumber {
+                return UInt8(bundle_version.integerValue) > UInt8(currentBundleVersion())
+            }
+        }
+        return false
+    }
+
 
     func fetchLatestBuild(completion: (PFObject.FetchCompletion) -> ()) {
 
