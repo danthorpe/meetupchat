@@ -61,7 +61,7 @@ def podsRoot
 	return "#{projectDirectory()}/Pods"
 end
 
-def isDebug()
+def is_debug()
   return ENV['CONFIGURATION'] == 'Debug'
 end
 
@@ -297,7 +297,7 @@ namespace :distribute do
 
   def push_channel_name(bundle_identifier)
     channel_name = bundle_identifier.gsub(".", "_")
-    if isDebug()
+    if is_debug()
       channel_name = "beta_" + channel_name
     end
     return channel_name
@@ -309,7 +309,7 @@ namespace :distribute do
     params["bundle_identifier"] = bundle_identifier
     params["bundle_version"] = bundle_version
     params["manifest_url"] = manifest_url
-    params["isBeta"] = isDebug()
+    params["isBeta"] = is_debug()
     params['channel_name'] = push_channel_name(bundle_identifier)
     params['application_name'] = application_name
     log("params: #{params.to_json}")
@@ -373,7 +373,11 @@ namespace :distribute do
     targetDirectory = directory_on_artifact_server(project, build)
     title("Download: #{filename} to #{targetDirectory}")
     buildbox_artifact='~/.buildbox/buildbox-artifact'
-    job = "'Debug Build'"
+    if is_debug()      
+      job = "'Debug Build'"
+    else
+      job = "'Release Build'"
+    end      
     make_dir = "mkdir -p #{targetDirectory}"
     artifact = "#{buildbox_artifact} download #{filename} #{targetDirectory} --job #{job} --build '#{ENV['BUILDBOX_BUILD_ID']}' --agent-access-token '#{ENV['BUILDBOX_AGENT_ACCESS_TOKEN']}'"
     command = "#{make_dir} && #{artifact}"
