@@ -1,0 +1,547 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		65BD5DC1199C9DAE00C4A236 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65BD5DBF199C9DAE00C4A236 /* Main.storyboard */; };
+		65BD5DC3199C9DAE00C4A236 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65BD5DC2199C9DAE00C4A236 /* Images.xcassets */; };
+		65BD5DCF199C9DAE00C4A236 /* Meetup_ChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BD5DCE199C9DAE00C4A236 /* Meetup_ChatTests.swift */; };
+		65BD5DE8199C9F4300C4A236 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BD5DE6199C9F4300C4A236 /* AppDelegate.swift */; };
+		65BD5DE9199C9F4300C4A236 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BD5DE7199C9F4300C4A236 /* ViewController.swift */; };
+		65BD5DEB199C9F4F00C4A236 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 65BD5DEA199C9F4F00C4A236 /* Settings.bundle */; };
+		65CEA20D19A4E8DE009050B2 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65CEA1F219A4E562009050B2 /* Parse.framework */; };
+		65CEA20E19A4E8DE009050B2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65CEA20A19A4E863009050B2 /* SystemConfiguration.framework */; };
+		65CEA21019A4E8DE009050B2 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65CEA20619A4E852009050B2 /* Security.framework */; };
+		65CEA21119A4E8DE009050B2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65CEA20419A4E848009050B2 /* QuartzCore.framework */; };
+		65CEA21219A4E8DE009050B2 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65CEA20219A4E841009050B2 /* MobileCoreServices.framework */; };
+		65CEA21319A4E8DE009050B2 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 65CEA20019A4E836009050B2 /* libz.dylib */; };
+		65CEA21419A4E8DE009050B2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65CEA1FE19A4E82D009050B2 /* CoreLocation.framework */; };
+		65CEA21519A4E8DE009050B2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65CEA1FC19A4E827009050B2 /* CoreGraphics.framework */; };
+		65CEA21619A4E8DE009050B2 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65CEA1FA19A4E81F009050B2 /* CFNetwork.framework */; };
+		65CEA21719A4E8DE009050B2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65CEA1F819A4E818009050B2 /* AudioToolbox.framework */; };
+		65F7A06D19A766DF005553C4 /* Deployment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F7A06C19A766DF005553C4 /* Deployment.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		65BD5DC9199C9DAE00C4A236 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 65BD5DAE199C9DAE00C4A236 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 65BD5DB5199C9DAE00C4A236;
+			remoteInfo = "Meetup Chat";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		65BD5DB6199C9DAE00C4A236 /* Meetup Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meetup Chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		65BD5DBA199C9DAE00C4A236 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65BD5DC0199C9DAE00C4A236 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		65BD5DC2199C9DAE00C4A236 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		65BD5DC8199C9DAE00C4A236 /* Meetup ChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Meetup ChatTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		65BD5DCD199C9DAE00C4A236 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65BD5DCE199C9DAE00C4A236 /* Meetup_ChatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meetup_ChatTests.swift; sourceTree = "<group>"; };
+		65BD5DE6199C9F4300C4A236 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		65BD5DE7199C9F4300C4A236 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		65BD5DEA199C9F4F00C4A236 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		65CEA1F219A4E562009050B2 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "Meetup Chat/Parse.framework"; sourceTree = "<group>"; };
+		65CEA1F419A4E61C009050B2 /* Meetup Chat-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Meetup Chat-Bridging-Header.h"; path = "Classes/Meetup Chat-Bridging-Header.h"; sourceTree = "<group>"; };
+		65CEA1F819A4E818009050B2 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		65CEA1FA19A4E81F009050B2 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		65CEA1FC19A4E827009050B2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		65CEA1FE19A4E82D009050B2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		65CEA20019A4E836009050B2 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		65CEA20219A4E841009050B2 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		65CEA20419A4E848009050B2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		65CEA20619A4E852009050B2 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		65CEA20A19A4E863009050B2 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		65CEA21C19A4FC28009050B2 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		65F7A06C19A766DF005553C4 /* Deployment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deployment.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		65BD5DB3199C9DAE00C4A236 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65CEA20D19A4E8DE009050B2 /* Parse.framework in Frameworks */,
+				65CEA20E19A4E8DE009050B2 /* SystemConfiguration.framework in Frameworks */,
+				65CEA21019A4E8DE009050B2 /* Security.framework in Frameworks */,
+				65CEA21119A4E8DE009050B2 /* QuartzCore.framework in Frameworks */,
+				65CEA21219A4E8DE009050B2 /* MobileCoreServices.framework in Frameworks */,
+				65CEA21319A4E8DE009050B2 /* libz.dylib in Frameworks */,
+				65CEA21419A4E8DE009050B2 /* CoreLocation.framework in Frameworks */,
+				65CEA21519A4E8DE009050B2 /* CoreGraphics.framework in Frameworks */,
+				65CEA21619A4E8DE009050B2 /* CFNetwork.framework in Frameworks */,
+				65CEA21719A4E8DE009050B2 /* AudioToolbox.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65BD5DC5199C9DAE00C4A236 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		65BD5DAD199C9DAE00C4A236 = {
+			isa = PBXGroup;
+			children = (
+				65BD5DB8199C9DAE00C4A236 /* Meetup Chat */,
+				65BD5DCB199C9DAE00C4A236 /* Meetup ChatTests */,
+				65CEA20C19A4E8A9009050B2 /* Frameworks */,
+				65BD5DB7199C9DAE00C4A236 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		65BD5DB7199C9DAE00C4A236 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				65BD5DB6199C9DAE00C4A236 /* Meetup Chat.app */,
+				65BD5DC8199C9DAE00C4A236 /* Meetup ChatTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		65BD5DB8199C9DAE00C4A236 /* Meetup Chat */ = {
+			isa = PBXGroup;
+			children = (
+				65BD5DEA199C9F4F00C4A236 /* Settings.bundle */,
+				65BD5DE5199C9F4300C4A236 /* Classes */,
+				65BD5DBF199C9DAE00C4A236 /* Main.storyboard */,
+				65BD5DC2199C9DAE00C4A236 /* Images.xcassets */,
+				65BD5DB9199C9DAE00C4A236 /* Supporting Files */,
+			);
+			path = "Meetup Chat";
+			sourceTree = "<group>";
+		};
+		65BD5DB9199C9DAE00C4A236 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				65CEA1F419A4E61C009050B2 /* Meetup Chat-Bridging-Header.h */,
+				65BD5DBA199C9DAE00C4A236 /* Info.plist */,
+				65CEA21C19A4FC28009050B2 /* Config.xcconfig */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		65BD5DCB199C9DAE00C4A236 /* Meetup ChatTests */ = {
+			isa = PBXGroup;
+			children = (
+				65BD5DCE199C9DAE00C4A236 /* Meetup_ChatTests.swift */,
+				65BD5DCC199C9DAE00C4A236 /* Supporting Files */,
+			);
+			path = "Meetup ChatTests";
+			sourceTree = "<group>";
+		};
+		65BD5DCC199C9DAE00C4A236 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				65BD5DCD199C9DAE00C4A236 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		65BD5DE5199C9F4300C4A236 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				65BD5DE6199C9F4300C4A236 /* AppDelegate.swift */,
+				65BD5DE7199C9F4300C4A236 /* ViewController.swift */,
+				65F7A06C19A766DF005553C4 /* Deployment.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		65CEA20C19A4E8A9009050B2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				65CEA1F219A4E562009050B2 /* Parse.framework */,
+				65CEA20A19A4E863009050B2 /* SystemConfiguration.framework */,
+				65CEA20619A4E852009050B2 /* Security.framework */,
+				65CEA20419A4E848009050B2 /* QuartzCore.framework */,
+				65CEA20219A4E841009050B2 /* MobileCoreServices.framework */,
+				65CEA20019A4E836009050B2 /* libz.dylib */,
+				65CEA1FE19A4E82D009050B2 /* CoreLocation.framework */,
+				65CEA1FC19A4E827009050B2 /* CoreGraphics.framework */,
+				65CEA1FA19A4E81F009050B2 /* CFNetwork.framework */,
+				65CEA1F819A4E818009050B2 /* AudioToolbox.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		65BD5DB5199C9DAE00C4A236 /* Meetup Chat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65BD5DD2199C9DAE00C4A236 /* Build configuration list for PBXNativeTarget "Meetup Chat" */;
+			buildPhases = (
+				65BD5DB2199C9DAE00C4A236 /* Sources */,
+				65BD5DB3199C9DAE00C4A236 /* Frameworks */,
+				65BD5DB4199C9DAE00C4A236 /* Resources */,
+				65BD5DE3199C9ED200C4A236 /* Set Build Info in Settings */,
+				65BD5DE4199C9F0800C4A236 /* Set Build Number in Info.plist */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Meetup Chat";
+			productName = "Meetup Chat";
+			productReference = 65BD5DB6199C9DAE00C4A236 /* Meetup Chat.app */;
+			productType = "com.apple.product-type.application";
+		};
+		65BD5DC7199C9DAE00C4A236 /* Meetup ChatTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65BD5DD5199C9DAE00C4A236 /* Build configuration list for PBXNativeTarget "Meetup ChatTests" */;
+			buildPhases = (
+				65BD5DC4199C9DAE00C4A236 /* Sources */,
+				65BD5DC5199C9DAE00C4A236 /* Frameworks */,
+				65BD5DC6199C9DAE00C4A236 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				65BD5DCA199C9DAE00C4A236 /* PBXTargetDependency */,
+			);
+			name = "Meetup ChatTests";
+			productName = "Meetup ChatTests";
+			productReference = 65BD5DC8199C9DAE00C4A236 /* Meetup ChatTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		65BD5DAE199C9DAE00C4A236 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "@danthorpe";
+				TargetAttributes = {
+					65BD5DB5199C9DAE00C4A236 = {
+						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = 8YR9FZ6395;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+						};
+					};
+					65BD5DC7199C9DAE00C4A236 = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = 65BD5DB5199C9DAE00C4A236;
+					};
+				};
+			};
+			buildConfigurationList = 65BD5DB1199C9DAE00C4A236 /* Build configuration list for PBXProject "Meetup Chat" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 65BD5DAD199C9DAE00C4A236;
+			productRefGroup = 65BD5DB7199C9DAE00C4A236 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				65BD5DB5199C9DAE00C4A236 /* Meetup Chat */,
+				65BD5DC7199C9DAE00C4A236 /* Meetup ChatTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		65BD5DB4199C9DAE00C4A236 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65BD5DC1199C9DAE00C4A236 /* Main.storyboard in Resources */,
+				65BD5DEB199C9F4F00C4A236 /* Settings.bundle in Resources */,
+				65BD5DC3199C9DAE00C4A236 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65BD5DC6199C9DAE00C4A236 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		65BD5DE3199C9ED200C4A236 /* Set Build Info in Settings */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Set Build Info in Settings";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "PLIST=\"${BUILT_PRODUCTS_DIR}/Meetup Chat.app/Settings.bundle/Root.plist\"\n/usr/libexec/PlistBuddy -c \"Set PreferenceSpecifiers:0:DefaultValue $APP_VERSION\" \"${PLIST}\"\nif [ \"$BUILDBOX_BUILD_NUMBER\" ]; then\n/usr/libexec/PlistBuddy -c \"Set PreferenceSpecifiers:1:DefaultValue $BUILDBOX_BUILD_NUMBER\" \"${PLIST}\"\n/usr/libexec/PlistBuddy -c \"Set PreferenceSpecifiers:1:Title Build\" \"${PLIST}\"\nelse\nHASHSHORT=$(git rev-parse --short HEAD)\nBRANCH=$(git branch | grep \"*\" | sed -e 's/^* //')\nBUILD=\"$BRANCH\"\n/usr/libexec/PlistBuddy -c \"Set PreferenceSpecifiers:1:DefaultValue $BRANCH\" \"${PLIST}\"\n/usr/libexec/PlistBuddy -c \"Set PreferenceSpecifiers:1:Title Branch\" \"${PLIST}\"\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		65BD5DE4199C9F0800C4A236 /* Set Build Number in Info.plist */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Set Build Number in Info.plist";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"$BUILDBOX_BUILD_NUMBER\" ]; then\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $BUILDBOX_BUILD_NUMBER\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\nexit 0\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		65BD5DB2199C9DAE00C4A236 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65BD5DE9199C9F4300C4A236 /* ViewController.swift in Sources */,
+				65F7A06D19A766DF005553C4 /* Deployment.swift in Sources */,
+				65BD5DE8199C9F4300C4A236 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65BD5DC4199C9DAE00C4A236 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65BD5DCF199C9DAE00C4A236 /* Meetup_ChatTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		65BD5DCA199C9DAE00C4A236 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 65BD5DB5199C9DAE00C4A236 /* Meetup Chat */;
+			targetProxy = 65BD5DC9199C9DAE00C4A236 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		65BD5DBF199C9DAE00C4A236 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				65BD5DC0199C9DAE00C4A236 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		65BD5DD0199C9DAE00C4A236 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		65BD5DD1199C9DAE00C4A236 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		65BD5DD3199C9DAE00C4A236 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65CEA21C19A4FC28009050B2 /* Config.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(PROJECT_DIR)/Meetup Chat\"",
+				);
+				INFOPLIST_FILE = "Meetup Chat/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Meetup Chat/Classes/Meetup Chat-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		65BD5DD4199C9DAE00C4A236 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65CEA21C19A4FC28009050B2 /* Config.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(PROJECT_DIR)/Meetup Chat\"",
+				);
+				INFOPLIST_FILE = "Meetup Chat/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Meetup Chat/Classes/Meetup Chat-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		65BD5DD6199C9DAE00C4A236 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Meetup ChatTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Meetup Chat.app/Meetup Chat";
+			};
+			name = Debug;
+		};
+		65BD5DD7199C9DAE00C4A236 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Meetup ChatTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Meetup Chat.app/Meetup Chat";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		65BD5DB1199C9DAE00C4A236 /* Build configuration list for PBXProject "Meetup Chat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65BD5DD0199C9DAE00C4A236 /* Debug */,
+				65BD5DD1199C9DAE00C4A236 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		65BD5DD2199C9DAE00C4A236 /* Build configuration list for PBXNativeTarget "Meetup Chat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65BD5DD3199C9DAE00C4A236 /* Debug */,
+				65BD5DD4199C9DAE00C4A236 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		65BD5DD5199C9DAE00C4A236 /* Build configuration list for PBXNativeTarget "Meetup ChatTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65BD5DD6199C9DAE00C4A236 /* Debug */,
+				65BD5DD7199C9DAE00C4A236 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 65BD5DAE199C9DAE00C4A236 /* Project object */;
+}

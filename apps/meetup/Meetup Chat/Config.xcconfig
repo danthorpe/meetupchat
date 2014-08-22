@@ -1,0 +1,9 @@
+//
+//  Config.xcconfig
+//  Meetup Chat
+//
+//  Created by Daniel Thorpe on 20/08/2014.
+//  Copyright (c) 2014 @danthorpe. All rights reserved.
+//
+
+APP_VERSION = 0.1
