@@ -8,17 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		655886EE19A36A7800594F75 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655886ED19A36A7800594F75 /* Connection.swift */; };
+		6594E22219AC03C700849025 /* protocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 6594E22119AC03C700849025 /* protocol.m */; };
+		6594E23D19AC040A00849025 /* TBinaryProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 6594E22719AC040A00849025 /* TBinaryProtocol.m */; };
+		6594E23E19AC040A00849025 /* TProtocolException.m in Sources */ = {isa = PBXBuildFile; fileRef = 6594E22A19AC040A00849025 /* TProtocolException.m */; };
+		6594E23F19AC040A00849025 /* TProtocolUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 6594E22D19AC040A00849025 /* TProtocolUtil.m */; };
+		6594E24019AC040A00849025 /* TApplicationException.m in Sources */ = {isa = PBXBuildFile; fileRef = 6594E22F19AC040A00849025 /* TApplicationException.m */; };
+		6594E24119AC040A00849025 /* TException.m in Sources */ = {isa = PBXBuildFile; fileRef = 6594E23119AC040A00849025 /* TException.m */; };
+		6594E24219AC040A00849025 /* TMemoryBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6594E23719AC040A00849025 /* TMemoryBuffer.m */; };
+		6594E24319AC040A00849025 /* TTransportException.m in Sources */ = {isa = PBXBuildFile; fileRef = 6594E23A19AC040A00849025 /* TTransportException.m */; };
+		6594E24419AC040A00849025 /* TSharedProcessorFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6594E23C19AC040A00849025 /* TSharedProcessorFactory.m */; };
+		65B448A719AB58890037E367 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B448A619AB58890037E367 /* Chat.swift */; };
+		65B448AE19ABA2B10037E367 /* DAKeyboardControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B448AD19ABA2B10037E367 /* DAKeyboardControl.m */; };
 		65BD5DC1199C9DAE00C4A236 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65BD5DBF199C9DAE00C4A236 /* Main.storyboard */; };
 		65BD5DC3199C9DAE00C4A236 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65BD5DC2199C9DAE00C4A236 /* Images.xcassets */; };
 		65BD5DCF199C9DAE00C4A236 /* Meetup_ChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BD5DCE199C9DAE00C4A236 /* Meetup_ChatTests.swift */; };
 		65BD5DE8199C9F4300C4A236 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BD5DE6199C9F4300C4A236 /* AppDelegate.swift */; };
-		65BD5DE9199C9F4300C4A236 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BD5DE7199C9F4300C4A236 /* ViewController.swift */; };
 		65BD5DEB199C9F4F00C4A236 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 65BD5DEA199C9F4F00C4A236 /* Settings.bundle */; };
 		65F7A06519A3717E005553C4 /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65F7A06419A3717E005553C4 /* MultipeerConnectivity.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		65BD5DC9199C9DAE00C4A236 /* PBXContainerItemProxy */ = {
+		65B448A819AB88970037E367 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 65BD5DAE199C9DAE00C4A236 /* Project object */;
 			proxyType = 1;
@@ -29,7 +39,35 @@
 
 /* Begin PBXFileReference section */
 		655886ED19A36A7800594F75 /* Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
-		65BD5DB6199C9DAE00C4A236 /* Meetup Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meetup Chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6594E22019AC03C700849025 /* protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = protocol.h; sourceTree = "<group>"; };
+		6594E22119AC03C700849025 /* protocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = protocol.m; sourceTree = "<group>"; };
+		6594E22519AC040A00849025 /* TBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBase.h; sourceTree = "<group>"; };
+		6594E22619AC040A00849025 /* TBinaryProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBinaryProtocol.h; sourceTree = "<group>"; };
+		6594E22719AC040A00849025 /* TBinaryProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBinaryProtocol.m; sourceTree = "<group>"; };
+		6594E22819AC040A00849025 /* TProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TProtocol.h; sourceTree = "<group>"; };
+		6594E22919AC040A00849025 /* TProtocolException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TProtocolException.h; sourceTree = "<group>"; };
+		6594E22A19AC040A00849025 /* TProtocolException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TProtocolException.m; sourceTree = "<group>"; };
+		6594E22B19AC040A00849025 /* TProtocolFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TProtocolFactory.h; sourceTree = "<group>"; };
+		6594E22C19AC040A00849025 /* TProtocolUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TProtocolUtil.h; sourceTree = "<group>"; };
+		6594E22D19AC040A00849025 /* TProtocolUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TProtocolUtil.m; sourceTree = "<group>"; };
+		6594E22E19AC040A00849025 /* TApplicationException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TApplicationException.h; sourceTree = "<group>"; };
+		6594E22F19AC040A00849025 /* TApplicationException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TApplicationException.m; sourceTree = "<group>"; };
+		6594E23019AC040A00849025 /* TException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TException.h; sourceTree = "<group>"; };
+		6594E23119AC040A00849025 /* TException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TException.m; sourceTree = "<group>"; };
+		6594E23219AC040A00849025 /* TObjective-C.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TObjective-C.h"; sourceTree = "<group>"; };
+		6594E23319AC040A00849025 /* TProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TProcessor.h; sourceTree = "<group>"; };
+		6594E23419AC040A00849025 /* TProcessorFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TProcessorFactory.h; sourceTree = "<group>"; };
+		6594E23619AC040A00849025 /* TMemoryBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMemoryBuffer.h; sourceTree = "<group>"; };
+		6594E23719AC040A00849025 /* TMemoryBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMemoryBuffer.m; sourceTree = "<group>"; };
+		6594E23819AC040A00849025 /* TTransport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTransport.h; sourceTree = "<group>"; };
+		6594E23919AC040A00849025 /* TTransportException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTransportException.h; sourceTree = "<group>"; };
+		6594E23A19AC040A00849025 /* TTransportException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTransportException.m; sourceTree = "<group>"; };
+		6594E23B19AC040A00849025 /* TSharedProcessorFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSharedProcessorFactory.h; sourceTree = "<group>"; };
+		6594E23C19AC040A00849025 /* TSharedProcessorFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSharedProcessorFactory.m; sourceTree = "<group>"; };
+		65B448A619AB58890037E367 /* Chat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		65B448AC19ABA2B10037E367 /* DAKeyboardControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAKeyboardControl.h; sourceTree = "<group>"; };
+		65B448AD19ABA2B10037E367 /* DAKeyboardControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAKeyboardControl.m; sourceTree = "<group>"; };
+		65BD5DB6199C9DAE00C4A236 /* Meetup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meetup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65BD5DBA199C9DAE00C4A236 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65BD5DC0199C9DAE00C4A236 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		65BD5DC2199C9DAE00C4A236 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -37,7 +75,6 @@
 		65BD5DCD199C9DAE00C4A236 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65BD5DCE199C9DAE00C4A236 /* Meetup_ChatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meetup_ChatTests.swift; sourceTree = "<group>"; };
 		65BD5DE6199C9F4300C4A236 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		65BD5DE7199C9F4300C4A236 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		65BD5DEA199C9F4F00C4A236 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		65CEA1F419A4E61C009050B2 /* Meetup Chat-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Meetup Chat-Bridging-Header.h"; path = "Classes/Meetup Chat-Bridging-Header.h"; sourceTree = "<group>"; };
 		65CEA21C19A4FC28009050B2 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
@@ -63,6 +100,80 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6594E21F19AC03C700849025 /* Autogenerated */ = {
+			isa = PBXGroup;
+			children = (
+				6594E22019AC03C700849025 /* protocol.h */,
+				6594E22119AC03C700849025 /* protocol.m */,
+			);
+			name = Autogenerated;
+			path = "Thrift/gen-cocoa";
+			sourceTree = SOURCE_ROOT;
+		};
+		6594E22319AC040A00849025 /* Thrift */ = {
+			isa = PBXGroup;
+			children = (
+				6594E22419AC040A00849025 /* protocol */,
+				6594E22E19AC040A00849025 /* TApplicationException.h */,
+				6594E22F19AC040A00849025 /* TApplicationException.m */,
+				6594E23019AC040A00849025 /* TException.h */,
+				6594E23119AC040A00849025 /* TException.m */,
+				6594E23219AC040A00849025 /* TObjective-C.h */,
+				6594E23319AC040A00849025 /* TProcessor.h */,
+				6594E23419AC040A00849025 /* TProcessorFactory.h */,
+				6594E23519AC040A00849025 /* transport */,
+				6594E23B19AC040A00849025 /* TSharedProcessorFactory.h */,
+				6594E23C19AC040A00849025 /* TSharedProcessorFactory.m */,
+			);
+			path = Thrift;
+			sourceTree = "<group>";
+		};
+		6594E22419AC040A00849025 /* protocol */ = {
+			isa = PBXGroup;
+			children = (
+				6594E22519AC040A00849025 /* TBase.h */,
+				6594E22619AC040A00849025 /* TBinaryProtocol.h */,
+				6594E22719AC040A00849025 /* TBinaryProtocol.m */,
+				6594E22819AC040A00849025 /* TProtocol.h */,
+				6594E22919AC040A00849025 /* TProtocolException.h */,
+				6594E22A19AC040A00849025 /* TProtocolException.m */,
+				6594E22B19AC040A00849025 /* TProtocolFactory.h */,
+				6594E22C19AC040A00849025 /* TProtocolUtil.h */,
+				6594E22D19AC040A00849025 /* TProtocolUtil.m */,
+			);
+			path = protocol;
+			sourceTree = "<group>";
+		};
+		6594E23519AC040A00849025 /* transport */ = {
+			isa = PBXGroup;
+			children = (
+				6594E23619AC040A00849025 /* TMemoryBuffer.h */,
+				6594E23719AC040A00849025 /* TMemoryBuffer.m */,
+				6594E23819AC040A00849025 /* TTransport.h */,
+				6594E23919AC040A00849025 /* TTransportException.h */,
+				6594E23A19AC040A00849025 /* TTransportException.m */,
+			);
+			path = transport;
+			sourceTree = "<group>";
+		};
+		65B448AA19ABA2B10037E367 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				6594E22319AC040A00849025 /* Thrift */,
+				65B448AB19ABA2B10037E367 /* DAKeyboardControl */,
+			);
+			path = External;
+			sourceTree = "<group>";
+		};
+		65B448AB19ABA2B10037E367 /* DAKeyboardControl */ = {
+			isa = PBXGroup;
+			children = (
+				65B448AC19ABA2B10037E367 /* DAKeyboardControl.h */,
+				65B448AD19ABA2B10037E367 /* DAKeyboardControl.m */,
+			);
+			path = DAKeyboardControl;
+			sourceTree = "<group>";
+		};
 		65BD5DAD199C9DAE00C4A236 = {
 			isa = PBXGroup;
 			children = (
@@ -75,7 +186,7 @@
 		65BD5DB7199C9DAE00C4A236 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				65BD5DB6199C9DAE00C4A236 /* Meetup Chat.app */,
+				65BD5DB6199C9DAE00C4A236 /* Meetup.app */,
 				65BD5DC8199C9DAE00C4A236 /* Meetup ChatTests.xctest */,
 			);
 			name = Products;
@@ -85,9 +196,10 @@
 			isa = PBXGroup;
 			children = (
 				65BD5DEA199C9F4F00C4A236 /* Settings.bundle */,
-				65BD5DE5199C9F4300C4A236 /* Classes */,
-				65BD5DBF199C9DAE00C4A236 /* Main.storyboard */,
 				65BD5DC2199C9DAE00C4A236 /* Images.xcassets */,
+				65BD5DE5199C9F4300C4A236 /* Classes */,
+				65B448AA19ABA2B10037E367 /* External */,
+				65BD5DBF199C9DAE00C4A236 /* Main.storyboard */,
 				65BD5DB9199C9DAE00C4A236 /* Supporting Files */,
 			);
 			path = "Meetup Chat";
@@ -123,9 +235,10 @@
 		65BD5DE5199C9F4300C4A236 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				6594E21F19AC03C700849025 /* Autogenerated */,
 				65BD5DE6199C9F4300C4A236 /* AppDelegate.swift */,
-				65BD5DE7199C9F4300C4A236 /* ViewController.swift */,
 				655886ED19A36A7800594F75 /* Connection.swift */,
+				65B448A619AB58890037E367 /* Chat.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -149,7 +262,7 @@
 			);
 			name = "Meetup Chat";
 			productName = "Meetup Chat";
-			productReference = 65BD5DB6199C9DAE00C4A236 /* Meetup Chat.app */;
+			productReference = 65BD5DB6199C9DAE00C4A236 /* Meetup.app */;
 			productType = "com.apple.product-type.application";
 		};
 		65BD5DC7199C9DAE00C4A236 /* Meetup ChatTests */ = {
@@ -163,7 +276,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				65BD5DCA199C9DAE00C4A236 /* PBXTargetDependency */,
+				65B448A919AB88970037E367 /* PBXTargetDependency */,
 			);
 			name = "Meetup ChatTests";
 			productName = "Meetup ChatTests";
@@ -249,7 +362,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "PLIST=\"${BUILT_PRODUCTS_DIR}/Meetup Chat.app/Settings.bundle/Root.plist\"\n/usr/libexec/PlistBuddy -c \"Set PreferenceSpecifiers:0:DefaultValue $APP_VERSION\" \"${PLIST}\"\nif [ \"$BUILDBOX_BUILD_NUMBER\" ]; then\n/usr/libexec/PlistBuddy -c \"Set PreferenceSpecifiers:1:DefaultValue $BUILDBOX_BUILD_NUMBER\" \"${PLIST}\"\n/usr/libexec/PlistBuddy -c \"Set PreferenceSpecifiers:1:Title Build\" \"${PLIST}\"\nelse\nHASHSHORT=$(git rev-parse --short HEAD)\nBRANCH=$(git branch | grep \"*\" | sed -e 's/^* //')\nBUILD=\"$BRANCH\"\n/usr/libexec/PlistBuddy -c \"Set PreferenceSpecifiers:1:DefaultValue $BRANCH\" \"${PLIST}\"\n/usr/libexec/PlistBuddy -c \"Set PreferenceSpecifiers:1:Title Branch\" \"${PLIST}\"\nfi\n";
+			shellScript = "PLIST=\"${BUILT_PRODUCTS_DIR}/Meetup.app/Settings.bundle/Root.plist\"\n/usr/libexec/PlistBuddy -c \"Set PreferenceSpecifiers:0:DefaultValue $APP_VERSION\" \"${PLIST}\"\nif [ \"$BUILDBOX_BUILD_NUMBER\" ]; then\n/usr/libexec/PlistBuddy -c \"Set PreferenceSpecifiers:1:DefaultValue $BUILDBOX_BUILD_NUMBER\" \"${PLIST}\"\n/usr/libexec/PlistBuddy -c \"Set PreferenceSpecifiers:1:Title Build\" \"${PLIST}\"\nelse\nHASHSHORT=$(git rev-parse --short HEAD)\nBRANCH=$(git branch | grep \"*\" | sed -e 's/^* //')\nBUILD=\"$BRANCH\"\n/usr/libexec/PlistBuddy -c \"Set PreferenceSpecifiers:1:DefaultValue $BRANCH\" \"${PLIST}\"\n/usr/libexec/PlistBuddy -c \"Set PreferenceSpecifiers:1:Title Branch\" \"${PLIST}\"\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		65BD5DE4199C9F0800C4A236 /* Set Build Number in Info.plist */ = {
@@ -274,9 +387,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65BD5DE9199C9F4300C4A236 /* ViewController.swift in Sources */,
 				65BD5DE8199C9F4300C4A236 /* AppDelegate.swift in Sources */,
 				655886EE19A36A7800594F75 /* Connection.swift in Sources */,
+				6594E22219AC03C700849025 /* protocol.m in Sources */,
+				6594E24219AC040A00849025 /* TMemoryBuffer.m in Sources */,
+				6594E24419AC040A00849025 /* TSharedProcessorFactory.m in Sources */,
+				6594E24019AC040A00849025 /* TApplicationException.m in Sources */,
+				6594E23E19AC040A00849025 /* TProtocolException.m in Sources */,
+				65B448AE19ABA2B10037E367 /* DAKeyboardControl.m in Sources */,
+				65B448A719AB58890037E367 /* Chat.swift in Sources */,
+				6594E24319AC040A00849025 /* TTransportException.m in Sources */,
+				6594E23F19AC040A00849025 /* TProtocolUtil.m in Sources */,
+				6594E24119AC040A00849025 /* TException.m in Sources */,
+				6594E23D19AC040A00849025 /* TBinaryProtocol.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,10 +414,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		65BD5DCA199C9DAE00C4A236 /* PBXTargetDependency */ = {
+		65B448A919AB88970037E367 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 65BD5DB5199C9DAE00C4A236 /* Meetup Chat */;
-			targetProxy = 65BD5DC9199C9DAE00C4A236 /* PBXContainerItemProxy */;
+			targetProxy = 65B448A819AB88970037E367 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -403,8 +526,8 @@
 				INFOPLIST_FILE = "Meetup Chat/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PRODUCT_NAME = Meetup;
+				PROVISIONING_PROFILE = "d6072988-d4c1-44e7-9b21-506eb74d3ffc";
 				SWIFT_OBJC_BRIDGING_HEADER = "Meetup Chat/Classes/Meetup Chat-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -424,8 +547,8 @@
 				INFOPLIST_FILE = "Meetup Chat/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PRODUCT_NAME = Meetup;
+				PROVISIONING_PROFILE = "2fdc2ec5-85dd-4b12-972e-ade1e985fb11";
 				SWIFT_OBJC_BRIDGING_HEADER = "Meetup Chat/Classes/Meetup Chat-Bridging-Header.h";
 			};
 			name = Release;

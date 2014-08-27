@@ -39,6 +39,9 @@ def provideDefaultEnvironmentVariables
 	ENV['WORKSPACE'] = 'Yakatak' unless ENV.has_key?('WORKSPACE')
 	ENV['SDK'] = 'iphonesimulator' unless ENV.has_key?('SDK')
 	ENV['CONFIGURATION'] = 'Debug' unless ENV.has_key?('CONFIGURATION')
+
+	ENV['DISTRIBUTION_CHANNEL'] = 'Beta' unless ENV.has_key?('DISTRIBUTION_CHANNEL')
+
 	ENV['KEYCHAIN'] = 'build' unless ENV.has_key?('KEYCHAIN')		
 	ENV['KEYCHAIN_PASSWORD'] = 'Pa$$w0rd' unless ENV.has_key?('KEYCHAIN_PASSWORD')
 
@@ -97,9 +100,13 @@ namespace :xcode do
 	def derivedDataPathArgument
 		return "-derivedDataPath #{ENV['OUTPUT_DIR']}"
 	end
+  
+  def pathToBuiltProduct
+    return "#{ENV['OUTPUT_DIR']}/Build/Products/#{ENV['CONFIGURATION']}-iphoneos/Meetup.app"
+  end
 
-	def packageApplicationArgument(scheme)
-		return "#{Dir.pwd}/#{ENV['OUTPUT_DIR']}/Build/Products/#{ENV['CONFIGURATION']}-iphoneos/#{scheme}.app"	
+	def packageApplicationArgument(product)
+		return "#{Dir.pwd}/#{ENV['OUTPUT_DIR']}/Build/Products/#{ENV['CONFIGURATION']}-iphoneos/#{product}.app"	
 	end
 
 	def packageOutputArgument
@@ -139,12 +146,12 @@ namespace :xcode do
 		sh command		
 	end
 
-  def pathToBuiltInfoPlist(scheme)
-    return "#{packageApplicationArgument(scheme)}/Info.plist"
+  def pathToBuiltInfoPlist(product)
+    return "#{packageApplicationArgument(product)}/Info.plist"
   end
 
-  def get_bundle_identifier(scheme)
-    command = "/usr/libexec/PlistBuddy -c 'Print :CFBundleIdentifier' \"#{pathToBuiltInfoPlist(scheme)}\""
+  def get_bundle_identifier(product)
+    command = "/usr/libexec/PlistBuddy -c 'Print :CFBundleIdentifier' \"#{pathToBuiltInfoPlist(product)}\""
     result = false
     Open3.popen3(command) do |stdin, stdout, stderr, wait_thr|
       result = stdout.read
@@ -152,8 +159,8 @@ namespace :xcode do
     return result.chop
   end
 
-  def get_bundle_version(scheme)
-    command = "/usr/libexec/PlistBuddy -c 'Print :CFBundleVersion' \"#{pathToBuiltInfoPlist(scheme)}\""
+  def get_bundle_version(product)
+    command = "/usr/libexec/PlistBuddy -c 'Print :CFBundleVersion' \"#{pathToBuiltInfoPlist(product)}\""
     result = false
     Open3.popen3(command) do |stdin, stdout, stderr, wait_thr|
       result = stdout.read
@@ -161,20 +168,20 @@ namespace :xcode do
     return result.chop
   end
   
-  def write_bundle_identifier(scheme)
-    bundle_identifier = get_bundle_identifier(scheme)
+  def write_bundle_identifier(product)
+    bundle_identifier = get_bundle_identifier(product)
     write_buildbox_data('BUNDLE_IDENTIFIER', bundle_identifier)
   end
 
-  def write_bundle_version(scheme)
-    bundle_version = get_bundle_version(scheme)
+  def write_bundle_version(product)
+    bundle_version = get_bundle_version(product)
     write_buildbox_data('BUNDLE_VERSION', bundle_version)
   end
 
-  def save_build_variables(scheme)
+  def save_build_variables(product)
     if ENV['CI'] && ENV['BUILDBOX']
-      write_bundle_identifier(scheme)
-      write_bundle_version(scheme)
+      write_bundle_identifier(product)
+      write_bundle_version(product)
     end
   end
 
@@ -188,12 +195,19 @@ namespace :xcode do
 		prepareForBuild()
 		command = "xcodebuild #{workspaceArgument()} #{configurationArgument()} -sdk iphoneos -scheme \"#{scheme}\" #{derivedDataPathArgument()} clean build #{codeSigningArgument()} | xcpretty -c && exit ${PIPESTATUS[0]}"
 		sh command
+    # Additionally we need to code sign libraries
+#    pathToBinary = packageApplicationArgument(app)
+#    command = "codesign --force --verbose --sign 'iPhone Distribution: BLINDING SKIES LIMITED' #{pathToBinary}"
+#    sh command    
+#    command = "codesign --force --verbose --sign 'iPhone Distribution: BLINDING SKIES LIMITED' #{pathToBinary}/Frameworks/*"
+#    sh command
 	end
 
-	def package(scheme, ipa)
+	def package(scheme, product)
 		title("Packaging #{scheme}")	
 		prepareForArtifacts()
-		command = "xcrun -sdk iphoneos PackageApplication -v \"#{packageApplicationArgument(scheme)}\" -o \"#{packageOutputArgument()}/#{ipa}\""
+#		command = "xcrun -sdk iphoneos PackageApplication -v \"#{packageApplicationArgument(product)}\" -o \"#{packageOutputArgument()}/#{product}.ipa\" --sign \"iPhone Distribution: BLINDING SKIES LIMITED\" --embed \"/Users/daniel/Library/MobileDevice/Provisioning Profiles/Enterprise_Meetup_Chat.mobileprovision\""
+		command = "xcrun -sdk iphoneos PackageApplication -v \"#{packageApplicationArgument(product)}\" -o \"#{packageOutputArgument()}/#{product}.ipa\""
 		sh command
 	end
 		
@@ -236,8 +250,8 @@ namespace :xcode do
 		
 		desc 'Meetup Chat'
 		task :meetup => ['unlock_keychain'] do
-			build('Meetup Chat', 'Meetup.ipa')
-      save_build_variables('Meetup Chat')
+			build('Meetup Chat', 'Meetup')
+      save_build_variables('Meetup')
 		end
 
 	end
@@ -250,7 +264,7 @@ namespace :xcode do
 
 		desc 'Meetup Chat'
 		task :meetup => ['build:meetup'] do
-			package('Meetup Chat', 'Meetup.ipa')		
+			package('Meetup Chat', 'Meetup')		
 		end
 
 	end
@@ -269,6 +283,10 @@ namespace :distribute do
   
   def rest_api_key
     return ENV['PARSE_REST_API_KEY']
+  end
+  
+  def is_beta_distribution
+    return ENV['DISTRIBUTION_CHANNEL'] == 'Beta'
   end
   
   def run_cloud_function(functionName, body)
@@ -297,7 +315,7 @@ namespace :distribute do
 
   def push_channel_name(bundle_identifier)
     channel_name = bundle_identifier.gsub(".", "_")
-    if is_debug()
+    if is_beta_distribution()
       channel_name = "beta_" + channel_name
     end
     return channel_name
@@ -309,7 +327,7 @@ namespace :distribute do
     params["bundle_identifier"] = bundle_identifier
     params["bundle_version"] = bundle_version
     params["manifest_url"] = manifest_url
-    params["isBeta"] = is_debug()
+    params["isBeta"] = is_beta_distribution()
     params['channel_name'] = push_channel_name(bundle_identifier)
     params['application_name'] = application_name
     log("params: #{params.to_json}")
@@ -373,11 +391,8 @@ namespace :distribute do
     targetDirectory = directory_on_artifact_server(project, build)
     title("Download: #{filename} to #{targetDirectory}")
     buildbox_artifact='~/.buildbox/buildbox-artifact'
-    if is_debug()      
-      job = "'Debug Build'"
-    else
-      job = "'Release Build'"
-    end      
+    job = "'Release Build'"
+
     make_dir = "mkdir -p #{targetDirectory}"
     artifact = "#{buildbox_artifact} download #{filename} #{targetDirectory} --job #{job} --build '#{ENV['BUILDBOX_BUILD_ID']}' --agent-access-token '#{ENV['BUILDBOX_AGENT_ACCESS_TOKEN']}'"
     command = "#{make_dir} && #{artifact}"
