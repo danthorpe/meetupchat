@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65019BDC19ADE99800111AF7 /* ThreadSafety.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65019BDB19ADE99800111AF7 /* ThreadSafety.swift */; };
 		655886EE19A36A7800594F75 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655886ED19A36A7800594F75 /* Connection.swift */; };
 		6594E22219AC03C700849025 /* protocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 6594E22119AC03C700849025 /* protocol.m */; };
 		6594E23D19AC040A00849025 /* TBinaryProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 6594E22719AC040A00849025 /* TBinaryProtocol.m */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		65019BDB19ADE99800111AF7 /* ThreadSafety.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadSafety.swift; sourceTree = "<group>"; };
 		655886ED19A36A7800594F75 /* Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
 		6594E22019AC03C700849025 /* protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = protocol.h; sourceTree = "<group>"; };
 		6594E22119AC03C700849025 /* protocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = protocol.m; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				65BD5DE6199C9F4300C4A236 /* AppDelegate.swift */,
 				655886ED19A36A7800594F75 /* Connection.swift */,
 				65B448A619AB58890037E367 /* Chat.swift */,
+				65019BDB19ADE99800111AF7 /* ThreadSafety.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -398,6 +401,7 @@
 				65B448A719AB58890037E367 /* Chat.swift in Sources */,
 				6594E24319AC040A00849025 /* TTransportException.m in Sources */,
 				6594E23F19AC040A00849025 /* TProtocolUtil.m in Sources */,
+				65019BDC19ADE99800111AF7 /* ThreadSafety.swift in Sources */,
 				6594E24119AC040A00849025 /* TException.m in Sources */,
 				6594E23D19AC040A00849025 /* TBinaryProtocol.m in Sources */,
 			);

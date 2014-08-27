@@ -242,7 +242,6 @@
                 }
             }
         }
-
     }
  }
 
@@ -256,10 +255,15 @@
     }
 
     func connection(connection: Connection, peer: UserIdentifier, didChangeStatus status: Connection.Status) {
-//        let payload = PeerConnectionStatus(peer: peer, status: status)
-//        for container in handlers.values {
-//            container.handler.processNetworkMessage(payload)
-//        }
+        switch status {
+        case .Connected:
+            let peerStatusChange = PeerConnectionStatus(peer: peer, status: status)
+            let userInfo: Dictionary<String, AnyObject> = ["PeerStatus": peerStatusChange]
+            NSNotificationCenter.defaultCenter().postNotificationName(ConnectedPeersDidChangeNotificationName, object: self, userInfo: userInfo)
+
+        default:
+            break
+        }
     }
  }
 
@@ -278,7 +282,6 @@
             completion(result)
         }
     }
-
  }
 
  extension MCMCTextMessage: HandlerFactory {

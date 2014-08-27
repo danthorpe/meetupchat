@@ -32,11 +32,11 @@ def updateSubmodules
 end
 
 def provideDefaultEnvironmentVariables
-	ENV['PROJECT_DIR'] = 'apps/soccer' unless ENV.has_key?('PROJECT_DIR')
+	ENV['PROJECT_DIR'] = 'apps/meetup' unless ENV.has_key?('PROJECT_DIR')
 	ENV['OUTPUT_DIR'] = 'output' unless ENV.has_key?('OUTPUT_DIR')		
 	ENV['ARTIFACT_DIR'] = 'artifacts' unless ENV.has_key?('ARTIFACT_DIR')
 	
-	ENV['WORKSPACE'] = 'Yakatak' unless ENV.has_key?('WORKSPACE')
+	ENV['WORKSPACE'] = 'Meetup Chat' unless ENV.has_key?('WORKSPACE')
 	ENV['SDK'] = 'iphonesimulator' unless ENV.has_key?('SDK')
 	ENV['CONFIGURATION'] = 'Debug' unless ENV.has_key?('CONFIGURATION')
 

@@ -11,26 +11,29 @@
  class ChatContainer: UIViewController {
 
     let network = Network.Service()
-    var dataSource = ChatDataSource()
+    var _dataSource: ChatDataSource?
+    var dataSource: ChatDataSource {
+        return _dataSource!
+    }
 
     @IBOutlet weak var toolbarView: UIView!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var sendButton: UIButton!
 
+    required init(coder aDecoder: NSCoder) {
+        _dataSource = ChatDataSource(network: network)
+        super.init(coder: aDecoder)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureController()
-        configureDataSource()
     }
 
     func configureController() {
         title = "Meetup Chat"
         navigationController.navigationBar.backgroundColor = UIColor.darkGrayColor()
         configureToolbar()
-    }
-
-    func configureDataSource() {
-        dataSource.network = network
     }
 
     func configureToolbar() {
@@ -87,10 +90,39 @@
 
  class ChatDataSource: NSObject, TableViewDataSource {
 
-    var network: Network.Service?
+    private struct InternalData {
+        var items: [ChatItem] = []
+    }
+    private let protected = Protector(InternalData())
+
+    let network: Network.Service
     var networkHandlers: [Network.HandlerKey] = []
-    var items = NSMutableArray()
+
     var tableView: UITableView?
+
+    init(network network_: Network.Service) {
+        network = network_
+        super.init()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "numberOfConnectedPeersDidChangeNotification:", name: ConnectedPeersDidChangeNotificationName, object: nil)
+    }
+
+    func addItem(item: ChatItem, completion: ((Int) -> ())? = nil) {
+        var insertedIndex: Int?
+        protected.write({ (protected) -> () in
+            protected.items.append(item)
+            insertedIndex = protected.items.count - 1
+        }, completion: {
+            if let block = completion {
+                block(insertedIndex!)
+            }
+        })
+    }
+
+    func itemAtIndexPath(indexPath: NSIndexPath) -> ChatItem {
+        return protected.read { protected in
+            return protected.items[indexPath.row]
+        }
+    }
 
     func addNetworkHandlers() {
 
@@ -102,59 +134,54 @@
                     break
             }
         }
-        networkHandlers.append(network!.addNetworkMessageHandler(receivedTextMessageHandler))
+        networkHandlers.append(network.addNetworkMessageHandler(receivedTextMessageHandler))
     }
 
     func removeNetworkHandlers() {
         for (index: Int, key: Network.HandlerKey) in enumerate(networkHandlers) {
-            network!.removeNetworkMessageHandler(key)
+            network.removeNetworkMessageHandler(key)
         }
     }
 
     func numberOfConnectedPeersDidChangeNotification(notification: NSNotification) {
-        if let userInfo = notification.userInfo as? [String: String] {
-            if let peer = userInfo["peer"] {
-                if let status = userInfo["status"] {
-                    var peerStatusChange = PeerStatusChange(peer: peer, status: status)
-                    addItemsToChat(peerStatusChange)
-                }
+        if let userInfo = notification.userInfo as? [String: AnyObject] {
+            if let peerStatus = userInfo["PeerStatus"] as? PeerConnectionStatus {
+                addItemsToChat(peerStatus)
             }
         }
     }
-
-//    func didReceiveDataNotification(notification: NSNotification) {
-//        if let userInfo = notification.userInfo as? [String: String] {
-//            if let text = userInfo["text"] {
-//                var peer = userInfo["peer"]
-//                addMessage(text, from: peer!)
-//            }
-//        }
-//    }
 
     func addMessage(textMessage: MCMCTextMessage) {
         addItemsToChat(textMessage)
     }
 
     func addItemsToChat(item: ChatItem) {
-        items.addObject(item)
-        var indexPath = NSIndexPath(forItem: items.indexOfObject(item), inSection: 0)
-        dispatch_async(dispatch_get_main_queue()) { [weak self] in
-            if let tableView = self?.tableView {
-                tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
-                tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Bottom, animated: true)
+        addItem(item) { [weak self] (insertedIndex) in
+            var indexPath = NSIndexPath(forRow: insertedIndex, inSection: 0)
+            dispatch_async(dispatch_get_main_queue()) {
+                if let tableView = self?.tableView {
+                    tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+                    tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Bottom, animated: true)
+                }
             }
         }
     }
 
     func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        return protected.read { protected in
+            return protected.items.count
+        }
     }
 
     func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
-        if indexPath.row < items.count {
-            let item: AnyObject = items[indexPath.row]
+        let count: Int = protected.read { protected in
+            return protected.items.count
+        }
+        if indexPath.row < count {
+            let item = itemAtIndexPath(indexPath)
             switch item {
-            case is PeerStatusChange:
+
+            case is PeerConnectionStatus:
                 var cell: SystemEventCell = tableView.dequeueReusableCellWithIdentifier("SystemEvent", forIndexPath: indexPath) as SystemEventCell
                 cell.eventLabel.text = (item as ChatItem).primaryText
                 return cell
@@ -268,7 +295,7 @@
         constraints.append(NSLayoutConstraint(item: contentView, attribute: .Height, relatedBy: .GreaterThanOrEqual, toItem: messageLabel, attribute: .Height, multiplier: 1, constant: 0))
         // Horizontal constraints
         constraints.append(NSLayoutConstraint(item: nameLabel, attribute: .Leading, relatedBy: .Equal, toItem: contentView, attribute: .Leading, multiplier: 1, constant: padding.left))
-        constraints.append(NSLayoutConstraint(item: nameLabel, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: 80))
+        constraints.append(NSLayoutConstraint(item: nameLabel, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: 110))
         constraints.append(NSLayoutConstraint(item: messageLabel, attribute: .Leading, relatedBy: .Equal, toItem: nameLabel, attribute: .Trailing, multiplier: 1, constant: padding.left))
         constraints.append(NSLayoutConstraint(item: messageLabel, attribute: .Trailing, relatedBy: .Equal, toItem: contentView, attribute: .Trailing, multiplier: 1, constant: -padding.right))
 
