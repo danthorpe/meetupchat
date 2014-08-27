@@ -297,7 +297,7 @@
 				TargetAttributes = {
 					65BD5DB5199C9DAE00C4A236 = {
 						CreatedOnToolsVersion = 6.0;
-						DevelopmentTeam = 8YR9FZ6395;
+						DevelopmentTeam = 8AY49ER4EE;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -523,6 +523,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(PROJECT_DIR)/Meetup Chat\"",
@@ -531,7 +533,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = Meetup;
-				PROVISIONING_PROFILE = "d6072988-d4c1-44e7-9b21-506eb74d3ffc";
 				SWIFT_OBJC_BRIDGING_HEADER = "Meetup Chat/Classes/Meetup Chat-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -544,6 +545,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(PROJECT_DIR)/Meetup Chat\"",
@@ -552,7 +555,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = Meetup;
-				PROVISIONING_PROFILE = "2fdc2ec5-85dd-4b12-972e-ade1e985fb11";
 				SWIFT_OBJC_BRIDGING_HEADER = "Meetup Chat/Classes/Meetup Chat-Bridging-Header.h";
 			};
 			name = Release;
